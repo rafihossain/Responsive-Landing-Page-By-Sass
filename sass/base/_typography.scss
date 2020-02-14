@@ -1,0 +1,100 @@
+.header {
+    height : 95vh;
+    position: relative;
+    background-image:
+    linear-gradient(
+         to right bottom,
+         rgba($color-primary-light, 0.5),
+         rgba($color-primary-dark , 0.9)),
+    url('../img/header_bg.jpg');
+    background-size: cover;
+    background-position: top;
+    -webkit-clip-path: polygon(0 0 , 100% 0 , 100% 75%,0 100%);
+    clip-path: polygon(0 0 , 100% 0 , 100% 75%,0 100%);
+    /* animation: moveInRight 1s ease-in-out; */
+
+    &__logo-box {
+        position: absolute;
+        top: 4.8rem;
+        left: 4.8rem;
+    }
+
+   &__logo {
+    height: 35px;
+    animation: moveInRight 1s ease-in-out;
+   }
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        text-align: center;
+    }
+
+}
+
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .3rem;
+        }
+
+    }
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.74rem;
+        animation: moveInRight 1s ease-in-out;
+    }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right,$color-primary-light ,$color-primary-dark);
+    -webkit-background-clip:  text;
+    color: transparent;
+    transition: all .2s;
+
+    @include respond(tab-port) {
+       font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.paragraph {
+     font-size: $default-font-size;
+     &:not(:last-child) {
+         margin-bottom: 3rem;
+     }
+}

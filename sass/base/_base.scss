@@ -1,0 +1,44 @@
+
+* , *::before , *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 16px so 10px = ??
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // 1rem = 9px 
+    }
+    @include respond(tab-port) {
+        font-size: 50%; // //I want 1 rem = 8px so 16/8 = 50% ??
+        
+    }
+        }
+    @include respond(phone) {
+        font-size: 30%; //
+        
+    @include respond(big-desktop) {
+        font-size: 75%;  // 1 rem = 12px so 12/16
+    }
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, 'sans-serif';
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: #777;
+    padding: 3rem;
+    box-sizing: border-box;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
